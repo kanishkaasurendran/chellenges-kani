@@ -1,0 +1,109 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Working_with_CSV_Files" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="701,1098" sap2010:WorkflowViewState.IdRef="Working_with_CSV_Files_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="22">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Working_with_CSV_Files" sap:VirtualizedContainerService.HintSize="376,1266" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="clg" />
+      <Variable x:TypeArguments="x:String" Name="name" />
+      <Variable x:TypeArguments="x:String" Name="city" />
+      <Variable x:TypeArguments="x:String" Name="state" />
+      <Variable x:TypeArguments="x:String" Name="num" />
+      <Variable x:TypeArguments="x:String" Name="place" />
+      <Variable x:TypeArguments="sd:DataTable" Name="near" />
+      <Variable x:TypeArguments="x:String" Name="neardt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[clg]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;S.No&quot; msdata:AutoIncrement=&quot;true&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;College_x0020_Names&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;City&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;State&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;1&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;Kgcas&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Saravanampatti&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;2&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;Avinashilingam&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Sai baba colony&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;3&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;Krishna&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Vivekanandapuram&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;4&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;Karunya&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Karunya Nagar&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;5&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;UIT&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Periyanaicken palayam&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;6&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;PSG&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Peelamedu&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;7&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;Koungunaadu&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;G.N.Mills&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;8&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;RVS&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Sulur&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;9&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;GRD&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Peelamedu&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;10&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;NGP&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;KMCH&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;11&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;SNS&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Sarvanampatti&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;S.No&gt;12&lt;/S.No&gt;&#xD;&#xA;    &lt;College_x0020_Names&gt;Kumaraguru&lt;/College_x0020_Names&gt;&#xD;&#xA;    &lt;City&gt;Saravanampatti&lt;/City&gt;&#xD;&#xA;    &lt;State&gt;Tamil Nadu&lt;/State&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the Name of the College : " Title="College Name">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[name]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter the City : " Title="City">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[city]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter the State :" Title="State">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[state]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;13&quot;,name,city,state}]" DataTable="[clg]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[clg]" Delimitator="Comma" DisplayName="Write CSV" FilePath="C:\Users\HP\Desktop\CSV Files.txt" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+    <ui:InputDialog DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Select the Place Near by you" Options="[{&quot;Saravanampatti&quot;,&quot;Sai baba colony&quot;,&quot;Vivekanandapuram&quot;,&quot;Karunya Nagar&quot;,&quot;Periyanaicken palayam&quot;,&quot;Peelamedu&quot;,&quot;G.N.Mills&quot;,&quot;Sulur&quot;,&quot;Maruthmalai&quot;,&quot;KMCH&quot;}]" Title="Place">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[place]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:FilterDataTable DataTable="[clg]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[near]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["City"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:String">[place]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <x:Null />
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+    </ui:FilterDataTable>
+    <ui:OutputDataTable DataTable="[near]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[neardt]" />
+    <ui:WriteTextFile DisplayName="Write Text File" FileName="C:\Users\HP\Desktop\CSV Files.csv" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[neardt]" />
+  </Sequence>
+</Activity>
